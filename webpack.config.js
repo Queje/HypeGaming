@@ -6,7 +6,6 @@ module.exports = {
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: 'bundle.js',
-      publicPath: '',
     },
     module: {
       rules: [
@@ -68,7 +67,6 @@ module.exports = {
       new MiniCssExtractPlugin({
         filename: 'bundle.css',
       }),
-      new Dotenv(),
     ],
     watch: true,
     watchOptions: {

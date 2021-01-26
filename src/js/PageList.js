@@ -1,15 +1,15 @@
-const PageList = (argument = "des trucs") => {
+const PageList = (argument = "") => {
+  
+  let datasave = "";
   console.log("Page List", argument);
-
-  const Button = (text) => {
-    return `<button>${text}</button>`;
-  };  
   
   const preparePage = () => {
-    cleanedArgument = argument.replace(/\s+/g, "-");
+    const pagesize = "&page_size=9";
+    const cleanedArgument = argument.replace(/\s+/g, "-");
     let articles = "";
 
     const fetchList = (url, argument) => {
+      
       let finalURL = url;
       if (argument) {
         finalURL = url + "?search=" + argument;
@@ -18,26 +18,24 @@ const PageList = (argument = "des trucs") => {
       fetch(`${finalURL}`)
         .then((response) => response.json())
         .then((response) => {
-          response.results.forEach((article) => {
+          datasave = response;
+          console.log(datasave);
+          datasave.results.forEach((article) => {
             articles += `
-                  <div class="cardGame">
+                  <div class="card cardGame">
+                    <img src=${article.background_image}>
                     <h1>${article.name}</h1>
                     <h2>${article.released}</h2>
                     <a href = "#pagedetail/${article.id}">${article.id}</a>
                   </div>
                   <br>
-                  <div class="multiple-button">
-                    ${Button("Click here")}
-                    ${Button("Read more")}
-                    ${Button("One more !")}
-                  </div>
                 `;
           });
           document.querySelector(".page-list .articles").innerHTML = articles;
         });
     };
 
-    fetchList("https://api.rawg.io/api/games", cleanedArgument);
+    fetchList("https://api.rawg.io/api/games", cleanedArgument + pagesize);
   };
 
   const render = () => {
@@ -52,3 +50,5 @@ const PageList = (argument = "des trucs") => {
 
   render();
 };
+
+export{PageList};

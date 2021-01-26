@@ -1,6 +1,7 @@
 import '../sass/style.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './src/js/routes.js';
+import {routes} from './routes.js';
+import {PageList} from './PageList.js';
 
 let pageArgument;
 
@@ -15,3 +16,8 @@ const setRoute = () => {
 
 window.addEventListener("hashchange", () => setRoute());
 window.addEventListener("DOMContentLoaded", () => setRoute());
+
+window.addEventListener("submit", () => {
+  const searchInput = document.getElementById('search-input').value;
+  PageList(searchInput);
+});

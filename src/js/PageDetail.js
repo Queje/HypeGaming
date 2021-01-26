@@ -1,7 +1,7 @@
 const PageDetail = (argument = "") => {
     
   const preparePage = () => {
-    cleanedArgument = argument.replace(/\s+/g, "-");
+    const cleanedArgument = argument.replace(/\s+/g, "-");
 
 
     const fetchGame = (url, argument) => {
@@ -40,3 +40,5 @@ const PageDetail = (argument = "") => {
   render();
 
 };
+
+export {PageDetail};
