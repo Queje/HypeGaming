@@ -18,6 +18,9 @@ window.addEventListener("hashchange", () => setRoute());
 window.addEventListener("DOMContentLoaded", () => setRoute());
 
 window.addEventListener("submit", () => {
-  const searchInput = document.getElementById('search-input').value;
+  let searchInput = document.getElementById('search-input').value;
   PageList(searchInput);
 });
+
+const moregames = document.getElementById("buttonshowmore");
+moregames.addEventListener("click", () => PageList());
