@@ -11,6 +11,11 @@
 #hidden-text {
   display: none;
 }
+
+#details {
+  color: darkorange !important;
+  text-decoration: none;
+}
 @charset "UTF-8";
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
