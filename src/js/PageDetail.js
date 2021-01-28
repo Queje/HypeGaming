@@ -69,7 +69,7 @@ const PageDetail = (argument = "") => {
           articleDOM.querySelector("#detaildate").innerHTML = released;
           articleDOM.querySelector("#jumbo").style.backgroundImage= `url('${background_image}')`;
           articleDOM.querySelector("#detailplatformlogo").innerHTML = detailplatformlist; 
-          articleDOM.querySelector("#detailwebsite").href = `"${website}"`;
+          articleDOM.querySelector("#detailwebsite").href = website;
           articleDOM.querySelector("#detailgenres").innerHTML = gamegenres;
           articleDOM.querySelector("#detailtags").innerHTML = gametags;
           articleDOM.querySelector("#detailvideo").src = `https://www.youtube.com/embed/${clip.video}`;
