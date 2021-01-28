@@ -16,6 +16,11 @@
   color: darkorange !important;
   text-decoration: none;
 }
+
+#jumbo {
+  background-size: cover;
+  min-height: 500px;
+}
 @charset "UTF-8";
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
