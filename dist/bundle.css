@@ -1,3 +1,9 @@
+@media screen and (max-width: 100%) {
+  body {
+    font-size: 30px;
+  }
+}
+
 #bg {
   background-color: black !important;
   color: darkorange !important;
@@ -22,12 +28,12 @@
   min-height: 500px;
 }
 
-a, a:visited {
+.page-detail a, a:visited {
   text-decoration: none;
   position: relative;
   color: #069;
 }
-a:after, a:visited:after {
+.page-detail a:after, a:visited:after {
   content: "";
   height: 3px;
   position: absolute;
@@ -37,15 +43,20 @@ a:after, a:visited:after {
   background: #069;
   transition: 0.2s;
 }
-a:hover:after, a:visited:hover:after {
+.page-detail a:hover:after, a:visited:hover:after {
   width: 100%;
 }
-a.block, a:visited.block {
+.page-detail a.block, a:visited.block {
   display: block;
   padding: 0.5em;
 }
-a.block:hover, a:visited.block:hover {
+.page-detail a.block:hover, a:visited.block:hover {
   background: #eee;
+}
+
+#detailscreenshots img {
+  width: 100% !important;
+  height: auto !important;
 }
 @charset "UTF-8";
 /*!

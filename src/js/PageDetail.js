@@ -91,6 +91,7 @@ const PageDetail = (argument = "") => {
           articleDOM.querySelector("#detailgenres").innerHTML = gamegenres;
           articleDOM.querySelector("#detailtags").innerHTML = gametags;
           articleDOM.querySelector("#detailvideo").src = `https://www.youtube.com/embed/${clip.video}`;
+          articleDOM.querySelector("#detailtrailer").src = clip.clip; 
           articleDOM.querySelector("#detaildescription").innerHTML = description;
           articleDOM.querySelector("#detaildevelopers").innerHTML = devname;
           articleDOM.querySelector("#detailstore").innerHTML = detailstore;
@@ -126,15 +127,20 @@ const PageDetail = (argument = "") => {
           <div class="container">
             <small id="detailtags"></small>
             <br>
-            <br>
             <h4>List of similar Games:</h4>
             <div id="detailsuggestedgames"></div>
             <br>
-            <iframe id="detailvideo" width="420" height="315"></iframe>
+            <div class="row">
+              <div class="card">
+                <iframe id="detailvideo" width="420" height="315"></iframe>
+              </div>
+              <div class="card">
+                <video id="detailtrailer" controls width="420" height="315"></video>
+              </div>
+            </div>
+            <br>
             <h4>Description:</h4>
             <p id="detaildescription" class="description"></p>
-            <br>
-            <br>
             <br>
             <h4>Screenshots:</h4>
             <div id="detailscreenshots"></div>

@@ -1,11 +1,33 @@
+$backgroundcolor:  black !important;
+$textcolor:  darkorange !important;
+$cardbackgroundcolor:   darkslategrey !important;
+$mobile-width: 100%;
+$mobile-font: 30px;  
+
+@mixin screenshotsize {
+    width: 100% !important;
+    height: auto !important;
+}
+
+@mixin mobile {
+    @media screen and (max-width: $mobile-width) {
+      @content;
+      font-size: $mobile-font;
+    }
+}  
+
+body{
+    @include mobile;
+}
+
 #bg{
-    background-color: black !important;
-    color: darkorange !important;
+    background-color: $backgroundcolor;
+    color: $textcolor
 }
 
 .special{
     min-width: 30%;
-    background-color: darkslategrey !important;
+    background-color: $cardbackgroundcolor;
 }
 
 #hidden-text{
@@ -13,7 +35,7 @@
 }
 
 #details{
-    color: darkorange !important;
+    color: $textcolor;
     text-decoration: none;
 }
 
@@ -22,7 +44,7 @@
     min-height: 500px;
 }
 
-a, a:visited {
+.page-detail a, a:visited {
 	text-decoration: none;
 	position: relative;
 	color: #069;
@@ -50,4 +72,8 @@ a, a:visited {
 			background: #eee;
 		}
 	}
+}
+
+#detailscreenshots img{
+    @include screenshotsize;
 }
